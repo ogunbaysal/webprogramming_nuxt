@@ -1,0 +1,235 @@
+body, div, h1, input, li, ul, p {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: "source_sans_proregular" !important;
+  background-color: #fefefe;
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+}
+
+body {
+  height: 100%;
+  font-family: "source_sans_proregular" !important;
+  margin: 0;
+  padding: 0;
+}
+
+#topcontrol {
+  display: none;
+}
+
+img {
+  border: 0;
+  vertical-align: middle
+}
+
+ul {
+  list-style: none
+}
+
+h1 {
+  font-size: 100%;
+  font-weight: 400
+}
+
+div {
+  display: block
+}
+
+:focus {
+  outline: 0
+}
+
+a {
+  text-decoration: none;
+  font-family: source_sans_proregular;
+  color: #1b1b1b
+}
+
+.right {
+  float: right
+}
+
+.clear {
+  clear: both !important
+}
+
+input[type=text] {
+  font-family: "source_sans_proregular" !important;
+  border: 1px solid #d4d4d4;
+  font-size: 12px;
+  color: #4b4b4b;
+  background-color: transparent;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 10px;
+}
+
+@font-face {
+  font-family: source_sans_proregular;
+  src: url(https://cdn.dsmcdn.com/frontend/web/assets/fonts/sourcesanspro-regular-webfont.eot);
+  src: url(https://cdn.dsmcdn.com/frontend/web/assets/fonts/sourcesanspro-regular-webfont.eot?#iefix) format("embedded-opentype"), url(https://cdn.dsmcdn.com/frontend/web/assets/fonts/sourcesanspro-regular-webfont.woff) format("woff"), url(https://cdn.dsmcdn.com/frontend/web/assets/fonts/sourcesanspro-regular-webfont.ttf) format("truetype"), url(https://cdn.dsmcdn.com/frontend/web/assets/fonts/sourcesanspro-regular-webfont.svg#source_sans_proregular) format("svg");
+  font-style: normal;
+  font-weight: 400
+}
+
+[class*=col-] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box
+}
+
+.logo {
+  display: block;
+  height: 50px;
+  width: 194px;
+  background-image: none;
+  margin-top: 17px
+}
+
+.no-padding {
+  padding: 0 !important
+}
+
+#autoCompleteAppWrapper input[type="text"] {
+  height: auto;
+  line-height: unset;
+}
+
+.header-top {
+  height: 15px;
+  padding-top: 5px
+}
+
+.header-top ul.right {
+  float: right
+}
+
+.header-top ul li {
+  display: inline-block;
+  margin-left: 30px
+}
+
+.header-top ul li a {
+  color: #999;
+  font-size: 12px;
+  line-height: 15px
+}
+
+.header {
+  height: 84px;
+  width: 100%
+}
+
+.row {
+  margin-left: -.9375rem;
+  margin-right: -.9375rem
+}
+
+.col-sm-11, .col-sm-12, .col-xs-1, .col-xs-11, .col-xs-12, .col-xs-3, .col-xs-2, .col-xs-6 {
+  position: relative;
+  min-height: 1px;
+  padding-left: .9375rem;
+  padding-right: .9375rem
+}
+
+.col-xs-1, .col-xs-11, .col-xs-12, .col-xs-3, .col-xs-6, .col-xs-2 {
+  float: left
+}
+
+.col-xs-1 {
+  width: 8.33333%
+}
+
+.col-xs-2 {
+  width: 16.666666666666664%
+}
+
+.col-xs-3 {
+  width: 25%
+}
+
+.col-xs-6 {
+  width: 50%
+}
+
+.col-xs-11 {
+  width: 91.66667%
+}
+
+.col-xs-12 {
+  width: 100%
+}
+
+.wrapper {
+  width: 1080px;
+  margin: 0 auto;
+  height: 100%
+}
+
+.header-search-box-container {
+  width: 80%;
+  height: 34px;
+  margin: 23px auto 0;
+}
+
+.header-search-box-container .header-search {
+  height: 38px;
+}
+
+.header-search-box-container #searchWrapper {
+  border: 1px solid #e0e0e0;
+  border-radius: 21px;
+  overflow: hidden;
+  padding: 0 7px;
+  background-color: #faf9f9
+}
+
+.header-search-box-container #searchWrapper input {
+  border: 0;
+  font-size: 14px;
+  width: 100%;
+  height: 34px;
+  padding: 2px 0 0;
+  text-indent: 10px;
+  opacity: .8
+}
+
+.header-search-box-container #searchWrapper a {
+  background-color: #faf9f9
+}
+
+
+.header-search-box-container .search-icon i {
+  margin: 10px 0 0 10px;
+  width: 19px;
+  height: 18px;
+}
+
+.icon {
+  display: inline-block
+}
+
+.icon-search-orange {
+  background-image: url("data:image/svg+xml;charset=utf8, %3Csvg xmlns='http://www.w3.org/2000/svg' width='19' height='19' viewBox='0 0 19 19'%3E%3Cpath fill='%23F27A1A' d='M18.711 17.306l-4.684-4.703a7.49 7.49 0 0 0 1.864-4.932C15.891 3.441 12.327 0 7.946 0S0 3.441 0 7.671s3.565 7.671 7.946 7.671a8.056 8.056 0 0 0 4.552-1.388l4.72 4.74c.197.197.462.306.746.306.27 0 .525-.1.718-.28a.977.977 0 0 0 .03-1.414zM7.946 2.001c3.238 0 5.873 2.544 5.873 5.67 0 3.127-2.635 5.67-5.873 5.67-3.239 0-5.873-2.543-5.873-5.67 0-3.126 2.634-5.67 5.873-5.67z'/%3E%3C/svg%3E");
+}
+
+#footer {
+  visibility: hidden;
+}
+
+.site-footer .wrapper .contentBox .app-img a, .site-footer .wrapper .contentBox .social-img a {
+  width: 29px;
+  height: 29px;
+  display: inline-block;
+  text-indent: -1000px;
+  background: url(https://cdn.dsmcdn.com/frontend/web/assets/images/social-iconset.png) no-repeat 0 0;
+}
+
+.site-footer .wrapper .contentBox h4 {
+  margin: 0 0 20px 0;
+}
