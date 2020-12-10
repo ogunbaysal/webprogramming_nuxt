@@ -2,10 +2,10 @@
     <div class="fltrs-wrppr">
         <div class="fltr-cntnr-ttl">{{ title }}</div>
         <input v-show="hasSearchBar" class="fltr-srch-inpt" type="text" placeholder="Ara" value="">
-        <div class="fltrs" v-for="(item, index) in options" :key="index">
-            <a class="fltr-item-wrppr" @click="onOptionClick(index)" href="#">
-                <div class="chckbox" :class="item.checked !== undefined && item.checked ? 'chckd' : ''"></div>
-                <div class="fltr-item-text">{{ item.title }}</div>
+        <div class="fltrs" v-for="(item, index) in options" :key="title + '-option-'+index">
+            <a class="fltr-item-wrppr" @click="onOptionClick(item)" href="#">
+                <div class="chckbox" :class="selectedFilters.includes(item) ? 'chckd' : ''"></div>
+                <div class="fltr-item-text">{{ item }}</div>
             </a>
         </div>
         <div class="aggregation-seperator"><span></span></div>
@@ -33,9 +33,25 @@ export default {
             default: false
         }
     },
+    computed: {
+      selectedFilters(){
+        return this.$store.getters["product/getSelectedFilters"][this.name];
+      }
+    },
     methods: {
-        onOptionClick(i){
-            this.options[i].checked = !this.options[i].checked;
+        onOptionClick(name){
+            if (this.selectedFilters.includes(name)) {
+              const index = this.selectedFilters.indexOf(name);
+              this.$store.dispatch("product/removeFilter", {
+                key: this.name,
+                index: index
+              });
+            }else{
+              this.$store.dispatch("product/addFilter", {
+                key: this.name,
+                value: name
+              });
+            }
             this.$forceUpdate();
         }
     }
