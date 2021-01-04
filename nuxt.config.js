@@ -47,8 +47,8 @@ export default {
           auth: true
         }
       },
-      '@nuxtjs/pwa'
-    ]
+    ],
+    '@nuxtjs/pwa'
   ],
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)

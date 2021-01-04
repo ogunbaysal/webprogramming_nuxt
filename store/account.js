@@ -1,6 +1,7 @@
 export const state = () => ({
   isLoggedIn: false,
-  user: null
+  user: null,
+  message: null,
 });
 export const mutations = {
   SET_LOGGED_IN(state, value) {
@@ -8,6 +9,9 @@ export const mutations = {
   },
   SET_USER(state, data) {
     state.user = data;
+  },
+  SET_MESSAGE(state, data) {
+    state.message = data;
   }
 };
 export const actions = {
@@ -58,8 +62,16 @@ export const actions = {
           this.$router.replace('/');
         })
         .catch(err => {
+          commit("SET_MESSAGE", err.message);
           console.log(err);
         })
+  },
+  logout({commit}) {
+    commit("SET_LOGGED_IN", false);
+    commit("SET_USER", null);
+  },
+  setMessage({commit}, message) {
+    commit("SET_MESSAGE", message);
   }
 };
 export const getters = {
@@ -68,5 +80,8 @@ export const getters = {
   },
   isLoggedIn(state) {
     return state.isLoggedIn;
+  },
+  message(state) {
+    return state.message;
   }
 };

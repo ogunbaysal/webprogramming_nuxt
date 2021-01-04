@@ -24,36 +24,6 @@
     <div class="lr-container">
       <Login v-if="isLogin === true" />
       <Register v-if="isLogin === false" />
-      <div class="social-account-login-buttons">
-        <div class="q-layout social-login-button flex flex-1">
-          <div
-            class="social-login-icon"
-            style="background-color: rgb(76, 110, 168)"
-          >
-            <i class="q-icon icon-facebook i-facebook"></i>
-          </div>
-          <div class="flex flex-column">
-            <div>
-              <div style="text-transform: capitalize">facebook</div>
-              <small>ile kaydol</small>
-            </div>
-          </div>
-        </div>
-        <div class="q-layout social-login-button flex flex-1">
-          <div
-            class="social-login-icon"
-            style="background-color: rgb(241, 66, 54)"
-          >
-            <i class="q-icon icon-google i-google"></i>
-          </div>
-          <div class="flex flex-column">
-            <div>
-              <div style="text-transform: capitalize">google</div>
-              <small>ile kaydol</small>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </template>

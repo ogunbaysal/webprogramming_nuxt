@@ -24,7 +24,7 @@
       <div class="account-link-container"> <i class="icon icon-help"></i> <a class="account-link" href="/yardim/sorular"> Yardım </a> </div>
       <div class="account-link-container logout-link" onclick="window.tycommon.accountNavigation.flushStorage()">
          <i class="icon icon-logout"></i>
-         <a class="account-link" href="/authentication/logout">Çıkış Yap</a>
+         <a class="account-link" @click="logout()">Çıkış Yap</a>
       </div>
    </div>
 </span>
@@ -32,7 +32,12 @@
 
 <script>
 export default {
-name: "AccountNavigation"
+  name: "AccountNavigation",
+  methods: {
+    logout() {
+      this.$store.dispatch("account/logout");
+    }
+  }
 }
 </script>
 
