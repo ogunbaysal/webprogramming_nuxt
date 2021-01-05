@@ -47,7 +47,7 @@ export const actions = {
         console.log(err);
       })
   },
-  loginWithEmailAndPassword({commit}, {email, password}) {
+  loginWithEmailAndPassword({commit, rootState}, {email, password}) {
       this.$fire.auth.signInWithEmailAndPassword(email, password)
         .then(data => {
           commit("SET_LOGGED_IN", data.user !== null);
@@ -55,6 +55,11 @@ export const actions = {
             commit("SET_USER", {
               displayName: data.user.displayName,
               email: data.user.email
+            });
+            this.$fire.firestore.collection('basket').doc(rootState.account.user.email).get().then(snapshot => {
+              let obj = snapshot.data();
+              console.log(obj);
+              rootState.basket.items = Object.values(obj);
             });
           } else {
             commit("SET_USER", null);

@@ -40,17 +40,39 @@ export const mutations = {
         }
       }
     }
+  },
+  _updateBasket(state, items) {
+    state.items = items;
   }
 };
 export const actions = {
-  addBasketItem({commit}, context){
+  addBasketItem({commit, dispatch}, context){
     commit("_addBasketItem", context);
+    dispatch("syncWithFirebase");
   },
-  removeBasketItem({commit}, basket_id) {
+  removeBasketItem({commit, dispatch}, basket_id) {
     commit("_removeBasketItem", basket_id);
+    dispatch("syncWithFirebase");
   },
-  updateItemAmount({commit}, param) {
+  updateItemAmount({commit, dispatch}, param) {
     commit("_updateAmount", param);
+    dispatch("syncWithFirebase");
+  },
+  fetchBasketFromFirebase({commit, rootState}){
+    if (rootState.account.isLoggedIn) {
+      this.$fire.firestore.collection('basket').doc(rootState.account.user.email).get().then(snapshot => {
+        let list = [];
+        snapshot.forEach(data => {
+          list.push(data.data());
+        });
+        commit('_updateBasket', list);
+      });
+    }
+  },
+  syncWithFirebase({commit, state, rootState}) {
+    if (rootState.account.isLoggedIn) {
+      this.$fire.firestore.collection('basket').doc(rootState.account.user.email).set({...state.items});
+    }
   }
 };
 export const getters = {
