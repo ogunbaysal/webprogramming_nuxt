@@ -21,7 +21,7 @@ export default {
     { src: '~/plugins/vuex-persist', ssr: false }
   ],
 
-  // Auto import components (https://go.nuxtjs.dev/config-components)
+  // Auto import pages (https://go.nuxtjs.dev/config-components)
   components: true,
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)

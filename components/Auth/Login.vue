@@ -52,10 +52,10 @@
 <script>
 export default {
     name: "Login",
-  created() {
-      this.$store.commit("account/SET_MESSAGE", null);
-  },
-  computed: {
+    created() {
+        this.$store.commit("account/SET_MESSAGE", null);
+    },
+    computed: {
       message() {
         return this.$store.getters["account/message"];
       }

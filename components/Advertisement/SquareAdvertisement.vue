@@ -12,7 +12,7 @@
 <script>
 import BannerSquareAdvertisement from "~/components/Home/BannerSquareAdvertisement";
 export default {
-name: "SquareAdvertisement",
+  name: "SquareAdvertisement",
   components: {BannerSquareAdvertisement},
 }
 </script>
