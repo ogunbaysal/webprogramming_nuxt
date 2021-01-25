@@ -1,35 +1,14 @@
-import Vuex from 'vuex';
-import {createLocalVue, shallowMount} from "@vue/test-utils"
-import Index from '../../pages/index'
-import RNFirebase from '../mock/firebase_mock.js'
-describe("page /index", () => {
-  const localVue = createLocalVue()
-  localVue.use(Vuex)
-  let NuxtStore
-  let store
-  let wrapper
-  const firebase = new RNFirebase();
-  beforeAll(async () => {
-    const storePath = `${process.env.buildDir}/store.js`
-    NuxtStore = await import(storePath)
-    store = await  NuxtStore.createStore()
+import { createPage, setupTest } from '@nuxt/test-utils'
+
+describe('browser', () => {
+  setupTest({ server: true })
+
+  it('renders the index page', async () => {
+    const page = await createPage('/')
+    const html = await page.innerHTML('body')
+
+    expect(html).toBeTruthy();
+    const componentItem = await page.$$('.component-item');
+    expect(componentItem).toBeTruthy();
   })
-  describe('Index Page Tests', () => {
-    test('init', () => {
-      const wrapper = shallowMount(Index, {
-        stubs: {
-          'nuxt-link': true
-        },
-        mocks: {
-          $store: store,
-          $fire: firebase
-        },
-        localVue
-      })
-      // expect(wrapper).toBeTruthy();
-      // expect(wrapper.vm).toBeTruthy();
-    })
-  });
-
-
-});
+})

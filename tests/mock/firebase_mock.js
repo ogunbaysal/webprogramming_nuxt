@@ -31,7 +31,7 @@ export default class RNFirebase {
 
   static initializeApp = jest.fn();
 
-  static auth = jest.fn(() => {
+  auth = jest.fn(() => {
     return {
       createUserAndRetrieveDataWithEmailAndPassword: jest.fn(() => Promise.resolve(true)),
       sendPasswordResetEmail: jest.fn(() => Promise.resolve(true)),
@@ -45,11 +45,11 @@ export default class RNFirebase {
     }
   });
 
-  static firestore = {
+  firestore = {
     collection
   }
 
-  static notifications = jest.fn(() => {
+  notifications = jest.fn(() => {
     return {
       onNotification: jest.fn(),
       onNotificationDisplayed: jest.fn(),
@@ -57,7 +57,7 @@ export default class RNFirebase {
     }
   });
 
-  static messaging = jest.fn(() => {
+  messaging = jest.fn(() => {
     return {
       hasPermission: jest.fn(() => Promise.resolve(true)),
       subscribeToTopic: jest.fn(),
@@ -67,7 +67,7 @@ export default class RNFirebase {
     }
   });
 
-  static storage = jest.fn(() => {
+  storage = jest.fn(() => {
     return {
       ref: jest.fn(() => {
         return {
